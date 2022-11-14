@@ -1,8 +1,10 @@
 <template>
-  <div class="event-card">
+  <router-link to = "/events/100001">
+    <div class="event-card">
       <span>@ {{event.time}} on {{event.date}}</span>
       <h1>{{event.title}}</h1>
   </div>
+  </router-link>
 </template>
 
 <script>
@@ -10,7 +12,10 @@ export default {
   // eslint-disable-next-line
   name: 'Events',
   props: {
-    event: Object
+    event: {
+      type: Object,
+      required: true
+    }
   }
 }
 </script>

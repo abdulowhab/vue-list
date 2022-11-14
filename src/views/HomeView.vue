@@ -9,7 +9,7 @@
 // @ is an alias to /src
 // eslint-disable-next-line
 import Events from '@/components/Events.vue';
-import axios from 'axios';
+import EventService from '../../src/services/EventService'
 
 export default {
   name: 'HomeView',
@@ -22,9 +22,12 @@ export default {
     }
   },
   created(){
-    axios.get("https://my-json-server.typicode.com/Owhab/fake-api/events")
+    EventService.getEvents()
     .then(response => {
-      console.log(response.data);
+      this.events = response.data
+    })
+    .then(error => {
+      console.log(error)
     })
 
   }

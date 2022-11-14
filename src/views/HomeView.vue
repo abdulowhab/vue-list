@@ -8,7 +8,7 @@
 <script>
 // @ is an alias to /src
 // eslint-disable-next-line
-import Events from '@/components/Events.vue'
+import Events from '@/components/Events.vue';
 import axios from 'axios';
 
 export default {
@@ -20,6 +20,13 @@ export default {
     return{
       events: null
     }
+  },
+  created(){
+    axios.get("https://my-json-server.typicode.com/Owhab/fake-api/events")
+    .then(response => {
+      console.log(response.data);
+    })
+
   }
 }
 </script>

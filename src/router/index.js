@@ -9,7 +9,8 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/events/100001',
+    path: '/event/:id',
+    props: true,
     name: 'EventDetails',
     component: EventDetails
   },

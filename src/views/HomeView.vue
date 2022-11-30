@@ -18,7 +18,8 @@ export default {
   },
   data(){
     return{
-      events: null
+      events: null,
+      error: null,
     }
   },
   created(){
@@ -27,7 +28,8 @@ export default {
       this.events = response.data
     })
     .then(error => {
-      console.log(error)
+      this.error = error
+      // console.log(error)
     })
 
   }
